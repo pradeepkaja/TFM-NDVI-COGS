@@ -1,5 +1,5 @@
-# Python 3.9
-FROM public.ecr.aws/docker/library/python:3.9-slim-buster
+# Python 3.10
+FROM public.ecr.aws/docker/library/python:3.10-slim-buster
 
 ########################################################
 # LINUX PACKAGES
@@ -83,6 +83,7 @@ COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip six wheel setuptools && \
    pip install --no-cache-dir --no-dependencies -r requirements.txt
 
+Run pip install git+https://github.com/CLOUDLAB-URV/dataplug
 
 # Set working directory to function root directory
 WORKDIR ${FUNCTION_DIR}
